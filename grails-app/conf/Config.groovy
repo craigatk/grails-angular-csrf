@@ -115,3 +115,6 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Angular plugin config settings
+grails.plugin.angularjs.version = "1.2.16"
