@@ -10,7 +10,7 @@ class CsrfService {
     boolean isApiController(String controllerName) {
         GrailsClass controllerClass = grailsApplication.getArtefactByLogicalPropertyName('Controller', controllerName)
 
-        boolean apiController = controllerClass.packageName.endsWith('.api')
+        boolean apiController = controllerClass?.packageName?.endsWith('.api')
 
         return apiController
     }
