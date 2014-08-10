@@ -79,6 +79,7 @@ grails.project.dependency.resolution = {
 
         test ":geb:${gebVersion}"
         test ":remote-control:1.5"
+        test ":rest-client-builder:2.0.1"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

@@ -12,7 +12,10 @@ class CsrfFilters {
 
                     String tokenFromHeader = request.getHeader('X-Csrf-Token')
 
-                    if (tokenFromHeader != validToken) {
+                    boolean tokenNotPresent = (!tokenFromHeader && !validToken)
+                    boolean tokenNotValid = (tokenFromHeader != validToken)
+
+                    if (tokenNotValid || tokenNotPresent) {
                         response.status = 401
 
                         return false
@@ -22,7 +25,7 @@ class CsrfFilters {
                 }
             }
             after = { Map model ->
-                if (!csrfService.isApiController(controllerName)) {
+                if (!csrfService.isApiController(controllerName) && model != null) {
                     // Generate token then add it to the session and model
                     String token = UUID.randomUUID().toString()
 

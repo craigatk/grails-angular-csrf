@@ -118,3 +118,4 @@ log4j.main = {
 
 // Angular plugin config settings
 grails.plugin.angularjs.version = "1.2.16"
+grails.plugin.angularjs.modules = ["animate", "cookies", "loader", "mocks", "resource", "route"]

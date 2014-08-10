@@ -20,7 +20,7 @@ class CsrfGspFiltersSpec extends Specification {
         }
 
         then:
-        assert session['csrfToken']
+        assert session['csrfToken']?.length() >= 16
     }
 }
 
